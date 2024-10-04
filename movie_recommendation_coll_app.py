@@ -8,8 +8,8 @@ import re
 # Load datasets
 @st.cache_data  
 def load_data():
-    movies = pd.read_csv(r"C:\Users\ASus\movie recommendations\movies.csv")
-    ratings = pd.read_csv(r"C:\Users\ASus\movie recommendations\ratings.csv")
+    movies = pd.read_csv("movies.csv")
+    ratings = pd.read_csv("ratings.csv")
     
     # Extract the year from the movie titles and add it as a separate column
     movies['year'] = movies['title'].apply(lambda x: re.search(r'\((\d{4})\)', x).group(1) if re.search(r'\((\d{4})\)', x) else np.nan)
